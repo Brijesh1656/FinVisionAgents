@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinVision-Agents</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'background': '#0D1117',
+              'surface': '#161B22',
+              'surface-light': '#21262D',
+              'primary': '#58A6FF',
+              'primary-hover': '#79B8FF',
+              'secondary': '#1F6FEB',
+              'subtle': '#8B949E',
+              'border': '#30363D',
+              'success': '#34D399',
+              'warning': '#FBBF24',
+              'danger': '#F87171',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            keyframes: {
+              pulse_subtle: {
+                '0%, 100%': { opacity: 1 },
+                '50%': { opacity: 0.7 },
+              },
+              fadeInUp: {
+                '0%': { transform: 'translateY(20px)', opacity: 0 },
+                '100%': { transform: 'translateY(0)', opacity: 1 },
+              },
+              gradient: {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+              },
+              glow: {
+                '0%, 100%': { textShadow: '0 0 5px rgba(88, 166, 255, 0.5), 0 0 10px rgba(88, 166, 255, 0.3)' },
+                '50%': { textShadow: '0 0 10px rgba(88, 166, 255, 0.7), 0 0 20px rgba(88, 166, 255, 0.5)' },
+              },
+              'border-glow-primary': {
+                '0%, 100%': { boxShadow: '0 0 0 0 rgba(88, 166, 255, 0)' },
+                '50%': { boxShadow: '0 0 0 4px rgba(88, 166, 255, 0.4)' },
+              },
+              'gradient-flow': {
+                '0%': { backgroundPosition: '150% center' },
+                '100%': { backgroundPosition: '-150% center' },
+              }
+            },
+            animation: {
+              pulse_subtle: 'pulse_subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              fadeInUp: 'fadeInUp 0.5s ease-out forwards',
+              gradient: 'gradient 15s ease infinite',
+              glow: 'glow 3s ease-in-out infinite',
+              'border-glow-primary': 'border-glow-primary 1.5s ease-in-out infinite',
+              'gradient-flow': 'gradient-flow 1.5s ease-in-out forwards',
+            },
+            typography: (theme) => ({
+              DEFAULT: {
+                css: {
+                  '--tw-prose-body': theme('colors.gray[300]'),
+                  '--tw-prose-headings': theme('colors.gray[100]'),
+                  '--tw-prose-lead': theme('colors.gray[400]'),
+                  '--tw-prose-links': theme('colors.primary'),
+                  '--tw-prose-bold': theme('colors.gray[100]'),
+                  '--tw-prose-counters': theme('colors.gray[400]'),
+                  '--tw-prose-bullets': theme('colors.primary'),
+                  '--tw-prose-hr': theme('colors.border'),
+                  '--tw-prose-quotes': theme('colors.gray[200]'),
+                  '--tw-prose-quote-borders': theme('colors.primary'),
+                  '--tw-prose-captions': theme('colors.gray[400]'),
+                  '--tw-prose-code': theme('colors.primary'),
+                  '--tw-prose-pre-code': theme('colors.gray[300]'),
+                  '--tw-prose-pre-bg': theme('colors.background'),
+                  '--tw-prose-th-borders': theme('colors.border'),
+                  '--tw-prose-td-borders': theme('colors.border'),
+                },
+              },
+            }),
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background text-gray-200 font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
